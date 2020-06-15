@@ -1,0 +1,67 @@
+{% extends 'base.html.twig' %}
+{% block title %}MonCompte{% endblock %}
+{% block head %}
+<style>
+    .menu li{
+        display: inline;
+    }
+</style>
+{% endblock %}
+{% block body %}
+<br>
+<div class="xxr">
+<div class="form-fo">
+
+{{ form_start(form)}}
+{{ form_row(form.modele,{'label': ' ','attr':{'placeholder': 'modéle de l appareil...', 'class' : 'form-control form-control-lg frs' }})}}
+<br>
+<button class="btn btn-primary">Recherche</button>
+
+{{ form_end(form)}}
+
+</div>
+
+<div class ="container">
+ {% for message in app.flashes('success') %}
+        <div class="alert alert-success">
+            {{ message }}
+        </div>
+    {% endfor %}
+    <div class ="row mt-4">
+        <div class ="col-md-6  mx-auto">
+            <div class="card bg-ligth rounded trd">
+                <div class="container-fluid">
+                    <div class="card-title text-defaut p-4 xx">
+                        
+                       <h1 class="divide"> Mes Appareils</h1>
+                    
+                    </div>
+                    <div class="card-body mt-2 rounded">
+                        {% for post in posts %}
+                        <div class="media">
+                            
+                            <div class="media-body bdr">
+                                <h5 class="mt-0">
+
+                                    <a class=" text-orie" href="{{path('appareil_show',{'id':post.id})}}"> {{post.modele}}</a>|
+                                 {{post.statut}}
+                               
+                                 
+                                </h5>
+                              </div>
+                           
+                              <a href="{{path('modifier_appareil',{'id':post.id})}}">
+                               <img src="http://www.clker.com/cliparts/E/X/T/d/g/H/red-edit-icon-glossy-md.png" width="25" height="20">
+                              </a>
+                            <a href="#"><i class="material-icons blue-text"></i></a>
+                        </div>
+                           
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+{% endblock %}

@@ -1,0 +1,6 @@
+{% extends 'base.html.twig'%}
+
+{% block body %}
+<h1> account activation </h1>
+<p><a href="{{ absolute_url(path('activation', {'token' : token}))}}"> activation </a></p>
+{% endblock %}

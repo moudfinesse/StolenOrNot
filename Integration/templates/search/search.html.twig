@@ -1,0 +1,47 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+<br><br>
+
+<div class="col-sm-8 post mx-auto rps">
+    <div class="titre">
+        <h1 class="poz"> Vérifier si un appareil est volé ou pas </h1>
+    </div>
+       <div class="card-body form-form">
+           <br>	
+            {{ form_start(form)}}
+    <div class="rowm">
+    {{ form_row(form.imei, {'label' : ' ','attr': {'placeholder': 'Votre numéro IMEI ...' , class : 'form-control-lg frs'}})}}
+    </div>
+    
+    <h1 class="poz"> OU </h1> 
+
+    <div class="rowme">
+    {{ form_row(form.mac,  { 'label': ' ','attr':{'placeholder': ' Votre adresse Mac ...' , class : 'form-control-lg frs'}})}}
+    </div>
+    {{ form_widget(form)}}
+
+   <button type="submit" class="btn btn-primary btrs"> Verifier  > </button>
+
+{{ form_end(form)}}
+
+      
+<br><br>
+
+    {% for message in app.flashes('success') %}
+        <div class="alert alert-success">
+            {{ message }}
+        </div>
+    {% endfor %}
+
+    {% for message in app.flashes('unsuccess') %}
+        <div class="alert alert-danger">
+            {{ message }}
+        </div>
+    {% endfor %}
+   </div>
+</div>
+
+
+
+ {% endblock %}

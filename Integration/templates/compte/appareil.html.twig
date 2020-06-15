@@ -1,0 +1,147 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+<div class ="container rap">
+    <div class ="row mt-4">
+        <div class ="col-md-6  mx-auto">
+            <div class="card bg-ligth rounded pop">
+                <div class="container-fluid">
+                    <h3 class="card-title text-defaut p-4 dea">
+                        
+                        {{post.type}}
+                    
+                    </h3>
+                    <div class="card-body mt-2 rounded">
+                      
+                        <div class="media">
+                            <div class="media-body">
+                                    {% if post.type == 'telephone' %}
+                                        <img src="https://cdn.pixabay.com/photo/2016/07/30/19/33/smartphone-1557796_960_720.png" width="40" height="50">
+                                    {% elseif post.type == "tablette"  %}
+                                        <img src="https://icons-for-free.com/iconfiles/png/512/device+handheld+ipad+portable+screen+tablet+icon-1320183136822074942.png" width="50" height="50">
+                                    {% elseif post.type == "ordinateur"  %}
+                                        <img src="https://static.vecteezy.com/system/resources/previews/000/331/028/non_2x/screen-glyph-black-icon-vector.jpg" width="50" height="50">
+                                    {% endif %} 
+                                    <a href="{{path('post_show',{'id':post.id})}}">
+                         
+                                        <img src="http://www1.cv-ag.com/wp-content/uploads/2016/08/pdf-icon-9.png" width="40" height="40">
+            
+                                        </a>
+                                 <h5 class="mt-0">Ajouté le {{ post.createdAt | date('d/m/y')}} à {{ post.createdAt | date('H:i')}} 
+                                 </h5>
+                                  <table>
+                                 <tbody>
+        			   <tr>
+                                            <td width = 50%>
+                                            <h5 class="mt-0">
+                                                Modèle
+                                                </h5>
+                                                </td>
+                                            
+                                                <td>
+                                                <h5 class="mt-0 mmt">
+                                                {{post.modele}}
+                                                </h5>
+                                                </td>
+                                        </tr>
+
+                                   <tr>
+                                            <td width = 50%>
+                                            <h5 class="mt-0">
+                                                Type  
+                                                </h5>
+                                                </td>
+                                            
+                                                <td>
+                                                <h5 class="mt-0 mmt">
+                                                {{post.type}}
+                                                </h5>
+                                                </td>
+                                        </tr>
+                                        
+                                     <tr>
+                                             <td>
+                                            <h5 class="mt-0">
+                                                Serial
+                                                </h5>
+                                                </td>
+                                                <td>
+                                                 <h5 class="mt-0 mmt">
+                                                    {{post.serial}}
+                                                  </h5>
+                                                  </td>
+                                               
+                                    </tr>
+                                    
+                                    <tr>
+                                         <td>
+                                            <h5 class="mt-0">
+                                                IMEI 
+                                                </h5>
+                                                </td>
+                                                <td>
+                                                  <h5 class="mt-0 mmt">
+                                                    {{post.imei}}
+                                                 </h5>
+                                                </td>
+                                     </tr>
+                                    <tr>
+                                         <td>
+                                            <h5 class="mt-0">
+                                                Capacité 
+                                                </h5>
+                                                </td>
+                                                <td>
+                                                 <h5 class="mt-0 mmt">
+                                                 {{post.capacite}}
+                                                 </h5>
+                                                </td>
+                                         </tr>
+                                     <tr>
+                                         <td>
+                                            <h5 class="mt-0">
+                                                Description 
+                                                </h5>
+                                        </td>
+                                        <td>
+                                                 <h5 class="mt-0 mmt">
+                                                     {{post.description}}
+                                                 </h5> 
+                                        </td> 
+                                       </tr> 
+                                 <tr>
+                                     <td>
+                                            <h5 class="mt-0">
+                                                Adresse mac 
+                                                </h5>
+                                        </td>
+                                        <td>
+                                                <h5 class="mt-0 mmt">
+                                                     {{post.mac}}
+                                                 </h5>
+                                        </td>
+                                    </tr>   
+                                <tr>
+                                        <td>
+                                            <h5 class="mt-0">
+                                                Technicals  
+                                                </h5>
+                                                </td>
+                                                <td>
+                                                <h5 class="mt-0 mmt">
+                                                     {{post.technicals}}
+                                                 </h5>
+                                        </td>
+                                </tr> 
+                                         </tbody>   
+                                        </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<br><br>
+{% endblock %}

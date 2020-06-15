@@ -1,0 +1,36 @@
+{% extends 'base.html.twig' %}
+	
+{% block body %}
+            
+            <div class="fry sts">
+                <h2 class="aide">Aide pour obtenir le numéro IMEI de votre téléphone ou tablette</h2>
+                <p>
+                    <p>- Tapez <strong>*#06# </p>
+                    <p>- Une fenêtre s'affichera sur l'écran</p>
+                    <p>- Le numéro <strong>IMEI</strong> est le numéro d'identification de l'appareil</p>
+                    <p>- Sinon, vérifiez la boite de l'appareil</p>
+                </p>
+            </div> 
+                 
+                  <div>
+                   <div class="fry sts"style=" position: absolute;
+                         top: 80px;
+                         left: 55%;">
+
+                         <h2 class="aide">Aide pour obtenir l'adresse MAC d'un ordinateur </h2>
+                        <p style="color: white;text-decoration:underline">  <strong>Windows</strong></p> 
+                        <p>- Cliquez sur le bouton “Démarrer”</p>
+                        <p>- Tapez “cmd” dans “Rechercher” pour atteindre l’Invite de Commande</p> 
+                        <p>- Saisissez la fonction ipconfig /all (ou getmac /v)</p>
+                        <p>- Vous verrez l’adresse MAC s’afficher sur votre écran.</p>
+                   
+             
+                        <strong class="mac">MAC</strong> <br>
+                        <p>- Sélectionnez le “Menu Pomme” </p>
+                        <p>- Puis “A propos de ce Mac” </p>
+                        <p>- Choisissez le menu “Réseau” puis “Configurations” </p>
+                        <p>- Vous verrez apparaître votre adresse MAC. </p>
+                        <p>- Sinon regardez sur l'emballage </p>
+                   </div>
+                           
+{% endblock %}

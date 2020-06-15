@@ -1,0 +1,34 @@
+{% extends 'base.html.twig' %}
+
+{% block body  %}
+<div class ="redact right">
+    <p class="redac">Vous pouvez verifier la solvabilité  de votre appareil en renseignant <b>l'IMEI</b> ou <b>l'adresse MAC</b></p>
+    
+
+</div>
+	<div class="container-fluid">
+	
+	
+			  {{ form_start(form)}}
+			   <div class="form-group">
+             {{ form_row(form.imei,{'attr': { 'label':' IMEI ','class':'form-control'}}) }}      
+    </div>
+    <div class="form-group">
+             {{ form_row(form.mac,{'attr': { 'label':' MAC :' ,'class':'form-control'}}) }}
+    </div>
+
+	  {{form_end(form)}}
+
+	</div>
+	 {% for message in app.flashes('success') %}
+            <div class="alert alert-success">
+                {{ message }}
+            </div>
+        {% endfor %}
+		 {% for message in app.flashes('unsuccess') %}
+            <div class="alert alert-danger">
+                {{ message }}
+            </div>
+        {% endfor %}
+{% endblock body  %}
+

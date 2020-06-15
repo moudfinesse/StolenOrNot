@@ -1,0 +1,42 @@
+ {% extends 'base.html.twig' %}
+
+ {% block body %}
+  
+<html lang="fr">
+ {% for message in app.flashes('message') %}
+    <div class="alert alert-success" role="alert">
+       {{message}}
+    </div>
+ {% endfor %}
+  {% for message in app.flashes('unsuccess') %}
+        <div class="alert alert-danger">
+            {{ message }}
+        </div>
+    {% endfor %}
+    <br><br><br>
+    
+      <div class="form-form fry">
+    <h1 class = "divider"> Connexion </h1><br>
+<form action="{{ path('security_login') }}" method = "POST">
+   <div class="form-group frm-st">
+      <input label= "username" placeholder=" Email ... " required name ="_username" type="text" class="form-control mail">
+      
+   </div>
+
+   <div class="form-group frm-st">
+       <input placeholder="  Mot de Passe ..." required name ="_password" type="password" class="form-control password">
+   </div>
+
+   <div class="form-group">
+      <button type="submit" class= "btn btn-primary">Connexion !</button>
+   </div>
+</form>
+<a class = "pass" href="{{path ('forgotten_password')}}"><p>Mot de passe oublié !</p></a>
+<div class=" bas-cnx">
+ Si vous n'avez pas un compte, cliquez ici : <a href="{{path ('security_registration')}}"> Inscrivez-vous </a>
+</div>
+</div>
+ </html>
+
+ {% endblock %}
+

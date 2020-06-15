@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>{% block title %}Stolen OR Not{% endblock %}</title>
+       <link rel="stylesheet" href="https://bootswatch.com/4/sandstone/bootstrap.min.css">
+       <link rel="stylesheet" href="public\build\css\app.css">
+       <script src="https://kit.fontawesome.com/c92155d8b3.js" crossorigin="anonymous"></script>
+
+        {% block stylesheets %}
+       {{ encore_entry_link_tags('app')}}
+        {% endblock %}
+    </head>
+
+ <nav class="navbar navbar-expand-lg navbar-light bg-light rtys">
+  <a class="navbar-brand" href="{{path('dashboard')}}" style="letter-spacing: 2px; font-style: oblique; font-weight : bold;">STOLEN OR NOT</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor03" aria-controls="navbarColor03" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarColor03">
+   {% if not app.user %}
+   <ul class="navbar-nav mr-auto">
+      <li class="nav-item active" >
+        <a class="nav-link" href= {{path('security_login')}}> Connexion </a>
+      </li>
+      <li class="nav-item">
+          <a class="nav-link" href={{path('security_registration')}}> Inscription</a>
+      </li>
+      {% else %}
+     
+      <li class="nav-item ">
+        <a class="nav-link nvl bnx" href={{path('ajout_appareil')}}> Ajouter un appareil</a>
+      </li>
+     
+       </div>
+        <div class="uss">
+          <li class="nav-item">
+            <div class="dropdown">
+             <a class="nav-link nvl" href={{ path('user_edit', {'id': app.user.id}) }}><i class="fas fa-user"></i> </a>
+             <div class="dropdown-content">
+             <a class="nav-link nvp" href="{{ path('dashboard')}}"> Dashboard</a>
+             <a class="nav-link nvp" href="{{path('Security_reset_password')}}">Modifier mon mot de passe</a>
+             <a class="nav-link nvp" href={{ path('user_edit', {'id': app.user.id}) }}>Modifier mes informations</a>
+            </div>
+           </div>
+          </li>
+        </div>
+        
+        <li class="nav-item dec">
+         <a class="nav-link nvl" href={{path('security_logout')}}> Deconnexion</a>
+        </li>
+      
+      
+
+      {% endif %}
+   
+      <div class ="nav-item center">
+        <div class="row">
+		          <img src="{{ asset('image/stolenornot.png') }}" alt="logo" id="logo">
+			  </div>
+      </div>
+    </div>
+   
+  </div>
+</nav>
+
+        {% block body %} {% endblock %}
+  <div class="footer fixed-bottom">
+      <div class ='row right'>
+      <a class="nav-link right" href= {{path('aPropos')}}> A Propos </a>
+      <a class="nav-link  right" href= {{path('aide')}}> Aide </a>
+    <a class="nav-link right" href= {{path('confidentiel')}}> confidentialité </a>
+     <a class="nav-link right" href= {{path('contact')}}> Nous contacter </a>
+    </div>
+</div>
+        {% block javascripts %}{% endblock %}
+ 
+</html>
+
+

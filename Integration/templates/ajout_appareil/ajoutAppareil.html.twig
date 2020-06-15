@@ -1,0 +1,44 @@
+{% extends 'base.html.twig' %}
+
+
+{% block body %}
+
+
+<div class="form-for">
+    <h1 class="aide">Ajouter un appareil </h1>
+
+    {{ form_start(form,{'action': path('ajout_appareil'), 'method': 'POST'}) }}
+    
+
+        {{ form_errors(form) }}
+    
+
+    <div  class="form-group">
+            <p class ="ajT" >Type : </p>
+            {{ form_row(form.type,{'label':' ','attr': { 'class':'form-control'}})}}
+    </div>
+    <div class="form-group">
+             {{ form_row(form.modele,{'label':'Modele  :','attr': { 'class':'form-control'}}) }}
+    </div>
+    <div class="form-group">
+             {{ form_row(form.capacite,{'label':'Capacite :','attr': { 'class':'form-control'}}) }}
+    </div>
+    <div class="form-group" >
+             {{ form_row(form.imei,{'label':' IMEI :','attr': { 'class':'form-control'}}) }}
+    </div>
+    <div class="form-group">
+             {{ form_row(form.serial,{'label':'Serial Number :','attr': { 'class':'form-control'}}) }}
+    </div>
+    <div class="form-group">
+             {{ form_row(form.mac,{'label':'MAC :','attr': { 'class':'form-control'}}) }}
+    </div>
+    <div class="form-group">
+             {{ form_row(form.description,{'label':'Description :','attr': { 'class':'form-control'}}) }}
+    </div>
+    <div class="form-group">
+             {{ form_row(form.statut,{'label':'Statut :','attr': { 'class':'form-control'}}) }}
+    </div>
+    <button type="submit" class ="btn btn-primary">Enregistrer</button><br><br>
+    {{form_end(form)}}
+</div>
+{% endblock %}

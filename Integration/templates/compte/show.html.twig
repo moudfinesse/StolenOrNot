@@ -1,0 +1,46 @@
+
+
+{% block body %}
+<div class ="container">
+<h1 align="center">Declaration de perte</h1><hr>
+<h2 align="center">{{post.modele}}</h2>
+<p>je declare avoir perdu un appareil dont les caractéristiques sont les suivantes</p>
+                            <h5 class="mt-0">
+                                        Type: {{post.type}}
+                           </h5>
+                      
+                       
+                         <h5 >  Serial : {{post.serial}} </h5>
+
+                       
+                    
+                        <h5 >
+                                IMEI : {{post.imei}}
+                                        
+                             </h5>
+                     
+                         <h5 >
+                                          Capacite : {{post.capacite}}
+                             </h5>
+                     
+                            
+                        <h5 >
+                                            Description : {{post.description}}
+                             </h5>  
+                     
+                         <h5 >
+                                             Adresse MAC : {{post.mac}}
+                             </h5>
+                      
+                        <h5 >
+                                            Technicals : {{post.technicals}}
+                            </h5>
+                       
+                                    
+                                  
+           <p align ="left"> Fait pour servir et valoir ce que de droit </p>
+                    <p align ="right">L'interesse</p>
+ 
+    </div>
+                                 
+{% endblock %}

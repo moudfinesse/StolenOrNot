@@ -1,0 +1,56 @@
+{% extends 'base.html.twig' %}
+
+
+
+
+
+{% block body %}
+
+
+<div class="container">
+<div class ="redact">
+    <p class="redac">Vous pouvez modifier le statut de l'appareil dont les caracteristiques sont les suivantes ...</p>
+    <p class="redac">Lorsque vous vendez votre appareil mettez a jour le statut et il sera automatiquement dereferencé de votre compte</p>
+
+</div>
+<div class="form-for register regis">
+    <h2 class="red">Modification de l'appareil </h2><br>
+
+      {{ form_start(form,{'action': path('save_updates',{id: appareil.id}), 'method': 'POST'}) }}
+    
+<div class="my-custom-class-for-errors">
+        {{ form_errors(form) }}
+    </div>
+
+    <div class="form-group">
+            {{ form_row(form.type,{'attr': { 'label':' TYPE : ','value':type,'readonly': 'true','class':'form-control'}})}}
+     
+    </div>
+    <div class="form-group">
+             {{ form_row(form.modele,{'attr': { 'label':' MODELE :','value':modele,'readonly': 'true','class':'form-control'}}) }}
+    </div>
+    <div class="form-group">
+             {{ form_row(form.capacite,{'attr': { 'label':' CAPACITE :','value':capacite,'readonly': 'true','class':'form-control'}}) }}
+    </div>
+    <div class="form-group">
+             {{ form_row(form.imei,{'attr': { 'label':' IMEI :','value':imei,'readonly': 'true','class':'form-control'}}) }}
+           
+    </div>
+    <div class="form-group">
+             {{ form_row(form.serial,{'attr': { 'label':' SERIAL :','value':serial,'readonly': 'true','class':'form-control'}}) }}
+    </div>
+    <div class="form-group">
+             {{ form_row(form.mac,{'attr': { 'label':' MAC :','value':mac,'readonly': 'true','class':'form-control'}}) }}
+    </div>
+    <div class="form-group">
+             {{ form_row(form.description,{'attr': { 'label':' DESCRIPTION :','value':description,'readonly': 'true','class':'form-control'}}) }}
+    </div>
+    <div class="form-group">
+             {{ form_row(form.statut,{'attr': { 'label':' STATUT :','class':'form-control'}}) }}
+    </div>
+    <button type="submit" class ="btn btn-success" name="update">Mettre A Jour</button>
+    {{form_end(form)}}
+    </div>
+</div>
+</div>
+{% endblock %}

@@ -1,0 +1,43 @@
+{% extends 'base.html.twig' %}
+{% block body %}
+<!-- inscription -->
+<div class ="redact">
+<h2 class="red"> On vous explique tout ...</h2><br>
+<p class="redac">Une fois inscrit, vous pourrez avoir un espace où seront enregistrés tous vos appareils .Inscrivez vous puis connectez vous a votre compte </p>
+<p class="redac">Inscrivez vous et profitez de ce service gratuit !</p>
+</div>
+<div class="form-for register">
+
+
+<h1 class= "divider"> S'inscrire </h1>
+
+{{ form_start(form)}}
+
+{{form_row(form.username, { 'label' : ' ' , 'attr' :
+ { 'placeholder' : 'Nom d\'utilisateur ...', 'class' :'form-control user'}})}}
+
+{{form_row(form.email, { 'label' : ' ', 'attr' :
+ { 'placeholder' : 'Email ...', 'class' :'form-control mail'}})}}
+<div class="nam">
+ {{form_row(form.nom, { 'label' : ' ', 'attr' :
+ { 'placeholder' : 'Nom ...', 'class' :'form-control '}})}}
+
+ {{form_row(form.prenom, { 'label' : ' ', 'attr' :
+ { 'placeholder' : 'Prenom ...', 'class' :'form-control '}})}}
+</div>
+{{form_row(form.password, {'label' : ' ', 'attr' :
+ {'placeholder' : 'Mot de passe !' , 'class' :'form-control password'}})}}
+
+{{form_row(form.confirm_password, {'label' : ' ', 'attr' :
+ {'placeholder' : 'Confirmation mot de passe ', 'class' :'form-control password'}})}}
+ <br>
+<button type="submit" class="btn btn-primary">S'inscrire !</button><br><br>
+{{form_end(form)}}
+</div>
+
+
+<!-- fin inscription  -->
+{% endblock %}
+
+
+
